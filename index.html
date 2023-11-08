@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template Manager</title>
+    <!-- You can include CSS here -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <div id="fileControlArea">
+            <button id="createNewTemplate">New Template</button>
+            <div class="drop-zone" id="dropZone">
+                <p>Drag & Drop your JSON file here</p>
+                <input type="file" id="loadFileInput" accept=".json" hidden>
+            </div>
+            <!--<button onclick="loadTemplate()">Load Template</button>-->
+            <div>
+                <!--<label for="filename">Save As: </label>-->
+                <!--<input type="text" id="filename" placeholder="Enter filename" value="templates">-->
+                <span id="filename">template</span><span>.json</span>
+                
+                <button id="saveTemplateToLocal">Save</button>
+            </div>
+        </div>
+
+
+        <div class="tabs">
+            <button id="settings-tab-btn">Settings</button>
+            <button id="preview-tab-btn">Preview</button>
+        </div>
+
+        <!-- Settings tab content -->
+        <div id="settings-tab">
+            <h2>HTML Email Template</h2>
+            
+            <div id="edit-section" style="display: flex;">
+                <div id="edit-template" style="flex: 1; height: 100vh; border-right: 1px solid #ccc;">
+                    <textarea id="email-template" rows="40"  style="width: 90%;"></textarea>
+                </div>
+                <div id="placeholder-section" style="flex: 1; height: 100vh; border-left: 1px solid #ccc; padding: 20px; width: 100% !important;">
+                    <h2>Placeholders</h2>
+                    <div id="placeholders-container">
+                        <!-- Dynamic content for placeholders will be added here -->
+                    </div>
+                    <button id="addNewPlaceholder">Add new Placeholder</button>
+                    <button id="addNewLocale">Add new Locale</button>
+                </div>
+                
+                
+                
+
+                
+            </div>
+        </div>
+        
+        <!-- Preview tab content -->
+        <div id="preview-tab" style="display: none;">
+
+          
+            <h2>Preview</h2>
+            <div id="locale-buttons">
+                <!-- Dynamic content for locale buttons will be added here -->
+            </div>
+
+            <div id="preview-section" style="display: flex;">
+                <textarea id="html-source-preview" style="flex: 1; height: 100vh; border-right: 1px solid #ccc;" readonly></textarea>
+                <div id="html-preview" style="flex: 1; height: 100vh; border-left: 1px solid #ccc;"></div>
+                <!--<iframe id="html-preview" style="flex: 1; height: 100vh; border-left: 1px solid #ccc;"></iframe>-->
+            </div>
+            <!--
+            <div id="html-preview"></div>
+            <h2>HTML Source Preview</h2>
+            <textarea id="html-source-preview" rows="10" cols="50" readonly></textarea>
+            -->
+        </div>
+        
+        <!-- Tabs navigation -->
+
+    </div>
+    
+    <!-- Include the JavaScript here -->
+    <script src="script.js"></script>
+</body>
+</html>
